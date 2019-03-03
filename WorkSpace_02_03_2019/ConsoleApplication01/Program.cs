@@ -30,7 +30,7 @@ namespace Figures
             Triangle tr = new Triangle(p1, p2, new Point(3, 1));
             Console.WriteLine("Length AC=" + tr.GetLengthAC());
             Console.WriteLine("Length AB=" + tr.GetLengthAB());
-            Console.WriteLine("Length BC=" + tr.GetLengthBC()); 
+            Console.WriteLine("Length BC=" + tr.GetLengthBC());
 
             Console.WriteLine();
             AbstractFigure[] masFig = new AbstractFigure[4];
@@ -43,6 +43,11 @@ namespace Figures
             {
                 Console.WriteLine(item);
             }
+
+            //Line[] arrayLine = new Line[] { new Line(p1, p2), l1, l2 };
+            Line[] arrayLine = new Line[] { tr.SideAB, tr.SideAC, tr.SideBC };
+            Console.WriteLine(FigureControl.GetMaxLength(arrayLine));
+
             Console.ReadKey();
         }
     }
