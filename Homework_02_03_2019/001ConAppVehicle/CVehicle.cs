@@ -8,7 +8,7 @@ namespace _001ConAppVehicle
 {
     abstract class CVehicle
     {
-        public CVehicle(string name, int x, int y, int price, int speed, int yearIssue)
+        public CVehicle(string name, int x, int y, int price, double speed, int yearIssue)
         {
             Name = name;
             Point = new Coordinates(x, y);
@@ -16,10 +16,10 @@ namespace _001ConAppVehicle
             Speed = speed;
             YearIssue = yearIssue;
         }
-        public string Name { get; }
+        public string Name { get; private set; }
         public int Price { get; set; }
-        public int Speed { get; set; }
-        public int YearIssue { get; set; }
+        public virtual double Speed { get; set; }
+        public int YearIssue { get; private set; }
 
         public Coordinates Point { get; set; }
 
