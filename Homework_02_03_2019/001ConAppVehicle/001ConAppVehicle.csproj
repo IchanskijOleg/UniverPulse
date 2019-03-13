@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CCar.cs" />
+    <Compile Include="CConvertor.cs" />
     <Compile Include="Coordinates.cs" />
     <Compile Include="CPlane.cs" />
     <Compile Include="CShip.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="IPassenger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpeedMeasurement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

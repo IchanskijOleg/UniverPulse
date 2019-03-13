@@ -8,7 +8,7 @@ namespace _001ConAppVehicle
 {
     class CCar : CVehicle
     {
-        public CCar(string name, int x, int y, int price, double speed, int yearIssue) : base(name, x, y, price, speed, yearIssue)
+        public CCar(string name, int x, int y, int price, double speed, SpeedMeasurement speedMeasure, int yearIssue) : base(name, x, y, price, speed, speedMeasure, yearIssue)
         {
         }
 
