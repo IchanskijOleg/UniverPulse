@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-
     public enum SpeedMeasurement
     {
-        Km,
-        Mile
+        km, //kilometer
+        m //mile
     }
-
 }

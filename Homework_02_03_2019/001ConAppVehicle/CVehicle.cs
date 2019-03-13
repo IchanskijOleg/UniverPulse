@@ -19,7 +19,7 @@ namespace _001ConAppVehicle
         }
         public string Name { get; private set; }
         public int Price { get; set; }
-        public virtual double Speed { get; set; }
+        public double Speed { get; set; }
         public int YearIssue { get; private set; }
 
         public SpeedMeasurement SpeedMeasure { get; set; }
@@ -28,7 +28,7 @@ namespace _001ConAppVehicle
 
         public override string ToString()
         {
-            return $"{Point.X},{Point.Y}"; //String.Format()
+            return $"{Name}; \tx={Point.X},y={Point.Y}; \tЦіна={Price}; \tШвид-ть={Speed}{SpeedMeasure}; \tРік={YearIssue};"; //String.Format()
         }
     }
 }

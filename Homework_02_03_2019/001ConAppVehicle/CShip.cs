@@ -12,16 +12,11 @@ namespace _001ConAppVehicle
         {
             Port = port;
             countPasseger = countPass;
-            this.speed = speed;
         }
-        private double speed;
+
         private int countPasseger;
         public string Port { get; set; }
-        public override double Speed
-        {
-            get { return speed * 1.852; }
-            set { speed = value / 1.852; }
-        }
+
         int IPassenger.CountPasseger { get { return countPasseger; } set { value = countPasseger; } }
     }
 }
