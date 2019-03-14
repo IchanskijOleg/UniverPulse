@@ -28,12 +28,16 @@ namespace _001ConAppVehicle
 
             //розділимо вивід на екран
             Console.WriteLine();
+
             //знайдемо найдорожчий транспортний засіб
             CVehicleAnalysis.GetMaxPrice(vehicle);
             //знайдемо найшвидший транспортний засіб
             CVehicleAnalysis.GetMaxSpeed(vehicle);
             // Найти транспортні засоби заданого року
             CVehicleAnalysis.FindVehicleGivenYear(vehicle, 2009);
+            Console.WriteLine();
+            //Виводимо інформацію по кількості пасажирів
+            CVehicleAnalysis.PrintPassenger(vehicle);
 
             Console.ReadKey();
         }

@@ -58,5 +58,20 @@ namespace _001ConAppVehicle
                 }
             }
         }
+
+        /// <summary>
+        /// Виводимо інформацію по кількості пасажирів
+        /// </summary>
+        /// <param name="vehicle">Масив транспортних засібів</param>
+        public static void PrintPassenger(CVehicle[] vehicle)
+        {
+            foreach (CVehicle item in vehicle)
+            {
+                if (item is IPassenger)
+                {
+                    Console.WriteLine(item.ToString());
+                }
+            }
+        }
     }
 }

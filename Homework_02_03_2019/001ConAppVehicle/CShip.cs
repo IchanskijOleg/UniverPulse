@@ -8,7 +8,8 @@ namespace _001ConAppVehicle
 {
     class CShip : CVehicle, IPassenger
     {
-        public CShip(string name, int x, int y, int price, double speed, SpeedMeasurement speedMeasure, int yearIssue, string port, int countPass) : base(name, x, y, price, speed, speedMeasure, yearIssue)
+        public CShip(string name, int x, int y, int price, double speed, SpeedMeasurement speedMeasure, int yearIssue, string port, int countPass)
+            : base(name, x, y, price, speed, speedMeasure, yearIssue)
         {
             Port = port;
             countPasseger = countPass;
