@@ -26,6 +26,28 @@ namespace _001ConAppVehicle
         }
 
         /// <summary>
+        /// Мінімальна ціна ТЗ
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <returns>ТЗ з мінімальною ціною</returns>
+        public static CVehicle GetVehicleMinPrice(CVehicle[] arrVehicle)
+        {
+            Array.Sort(arrVehicle, new CompareByPrice());
+            return arrVehicle[0];
+        }
+
+        /// <summary>
+        /// Максимальна ціна ТЗ
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <returns>ТЗ з максимальною ціною</returns>
+        public static CVehicle GetVehicleMaxPrice(CVehicle[] arrVehicle)
+        {
+            Array.Sort(arrVehicle, new CompareByPrice());
+            return arrVehicle[arrVehicle.Length - 1];
+        }
+
+        /// <summary>
         /// Найбільша швидкість серед транспортних засобів
         /// </summary>
         /// <param name="vehicle">Масив транспортних засібів</param>
@@ -97,6 +119,15 @@ namespace _001ConAppVehicle
         }
 
         /// <summary>
+        /// Виводимо на екран інформацію по транспортному засобу
+        /// </summary>
+        /// <param name="vehicle"></param>
+        public static void PrintVehicle(CVehicle vehicle)
+        {
+            Console.WriteLine(vehicle.ToString());
+        }
+
+        /// <summary>
         /// Виводимо на екран інформацію по транспортних засобах
         /// </summary>
         /// <param name="arrVehicle">Масив транспортних засібів</param>
@@ -104,7 +135,7 @@ namespace _001ConAppVehicle
         {
             foreach (var item in arrVehicle)
             {
-                Console.WriteLine(item.ToString());
+                PrintVehicle(item);
             }
         }
 
@@ -130,5 +161,7 @@ namespace _001ConAppVehicle
             Array.Copy(masVehicle, newVehicle, count);
             arrVehicle = newVehicle;
         }
+
+
     }
 }

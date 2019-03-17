@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="CCar.cs" />
     <Compile Include="CConvertor.cs" />
+    <Compile Include="CompareByPrice.cs" />
     <Compile Include="Coordinates.cs" />
     <Compile Include="CPlane.cs" />
     <Compile Include="CProgramSettings.cs" />

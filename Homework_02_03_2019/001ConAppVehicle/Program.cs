@@ -13,7 +13,7 @@ namespace _001ConAppVehicle
             CProgramSettings.PrintVersionProg(); //Виведемо версію програми
 
             CVehicle car1 = new CCar("Ferrari 458", 1, 1, 100000, 100, SpeedMeasurement.km, 2005);
-            CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 150, SpeedMeasurement.km, 1992);
+            CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 150, SpeedMeasurement.km, 2004);
             CVehicle car3 = new CCar("BMW M5", 2, 2, 45000, 230, SpeedMeasurement.km, 2018);
 
             CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 1989, 10000, 130);
@@ -39,18 +39,23 @@ namespace _001ConAppVehicle
             //Виводимо інформацію по кількості пасажирів
             CVehicleAnalysis.PrintPassenger(vehicle);
 
-            Console.WriteLine(new string('=',50));
+            Console.WriteLine(new string('=', 50));
             //Из Масива Vehicle получить масив Car не старше 5 лет
             CCar[] masCar;
             CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
             CVehicleAnalysis.PrintVehicleArr(masCar);
 
-            Console.WriteLine(new string('=', 50));
+            Console.WriteLine();
+            Console.WriteLine("Механизм год выпуска 2000 - 2005 с скоростью выше 150 км.ч, и наименьшей ценой");
             //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
             CVehicle[] vehicle1 = vehicle;
-            //CVehicleAnalysis.PrintVehicleArr(vehicle);
             CVehicleAnalysis.FindVehicleBetweenYear(ref vehicle1, 2000, 2005);
             CVehicleAnalysis.PrintVehicleArr(vehicle1);
+            CVehicle v = CVehicleAnalysis.GetVehicleMaxPrice(vehicle1);
+            CVehicleAnalysis.PrintVehicle(v);
+
+            Console.WriteLine(new string('=', 50));
+            CVehicleAnalysis.PrintVehicleArr(vehicle);
             Console.ReadKey();
         }
     }
