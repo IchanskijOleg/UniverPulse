@@ -46,6 +46,10 @@ namespace _001ConAppVehicle
             CVehicleAnalysis.PrintVehicleArr(masCar);
 
             Console.WriteLine(new string('=', 50));
+            //Vehicle с наибольшей ценой
+            CVehicleAnalysis.Method0(vehicle);
+
+            Console.WriteLine(new string('=', 50));
             //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
             CVehicleAnalysis.Method1(vehicle);
 

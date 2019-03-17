@@ -202,6 +202,25 @@ namespace _001ConAppVehicle
         }
 
         /// <summary>
+        /// Vehicle с наибольшей ценой
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        public static void Method0(CVehicle[] arrVehicle)
+        {
+            Console.WriteLine("Vehicle с наибольшей ценой");
+
+            CVehicle v = GetVehicleMaxPrice(arrVehicle);
+            if (v != null)
+            {
+                PrintVehicle(v);
+            }
+            else
+            {
+                Console.WriteLine("ТЗ з заданими умовами немає");
+            }
+        }
+
+        /// <summary>
         /// Механизм год выпуска 2000 - 2005 с скоростью выше 150 км.ч, и наименьшей ценой
         /// </summary>
         /// <param name="arrVehicle">Масив транспортних засібів</param>
@@ -228,5 +247,7 @@ namespace _001ConAppVehicle
                 Console.WriteLine("ТЗ з заданими умовами немає");
             }
         }
+
+
     }
 }
