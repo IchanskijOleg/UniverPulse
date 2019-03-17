@@ -41,6 +41,15 @@ namespace _001ConAppVehicle
             //Виводимо інформацію по кількості пасажирів
             CVehicleAnalysis.PrintPassenger(vehicle);
 
+            Console.WriteLine(new string('=',50));
+            //Из Масива Vehicle получить масив Car не старше 5 лет
+            CCar[] masCar;
+            CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
+            foreach (CVehicle item in masCar)
+            {
+                Console.WriteLine(item.ToString());
+            }
+
             Console.ReadKey();
         }
     }

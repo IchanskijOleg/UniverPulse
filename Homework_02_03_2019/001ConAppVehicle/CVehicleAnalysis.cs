@@ -73,5 +73,27 @@ namespace _001ConAppVehicle
                 }
             }
         }
+
+        /// <summary>
+        /// Из Масива Vehicle получить масив Car //не старше 5 лет
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="arrCar">Масив автомобілів</param>
+        public static void GetCarFromVehicle(CVehicle[] arrVehicle, out CCar[] arrCar)
+        {
+            CVehicle[] masVehicle = new CVehicle[arrVehicle.Length];
+            int count = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is CCar)
+                {
+                    masVehicle[count] = item as CCar;
+                    count++;
+                }
+            }
+            CCar[] masCar = new CCar[count];
+            Array.Copy(masVehicle, masCar, count);
+            arrCar = masCar;
+        }
     }
 }
