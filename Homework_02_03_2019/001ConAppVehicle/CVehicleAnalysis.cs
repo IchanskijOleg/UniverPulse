@@ -111,7 +111,7 @@ namespace _001ConAppVehicle
         }
 
         /// <summary>
-        /// Из Масива Vehicle получить масив Car //не старше 5 лет
+        /// Из Масива Vehicle получить масив Car  
         /// </summary>
         /// <param name="arrVehicle">Масив транспортних засібів</param>
         /// <param name="arrCar">Масив автомобілів</param>
@@ -130,6 +130,28 @@ namespace _001ConAppVehicle
             CCar[] masCar = new CCar[count];
             Array.Copy(masVehicle, masCar, count);
             arrCar = masCar;
+        }
+
+        /// <summary>
+        /// Из Масива Vehicle получить масив Ship  
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="arrShip">Масив кораблів</param>
+        public static void GetShipFromVehicle(CVehicle[] arrVehicle, out CShip[] arrShip)
+        {
+            CVehicle[] masVehicle = new CVehicle[arrVehicle.Length];
+            int count = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is CShip)
+                {
+                    masVehicle[count] = item as CShip;
+                    count++;
+                }
+            }
+            CShip[] masCShip = new CShip[count];
+            Array.Copy(masVehicle, masCShip, count);
+            arrShip = masCShip;
         }
 
         /// <summary>
@@ -248,25 +270,57 @@ namespace _001ConAppVehicle
             }
         }
 
+        /// <summary>
+        /// Из Масива Vehicle получить масив Car не старше 5 лет
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
         public static void Method2(CVehicle[] arrVehicle)
         {
             Console.WriteLine("Из Масива Vehicle получить масив Car не старше 5 лет");
 
             DateTime todaysDate = DateTime.Now.Date;
             int year = todaysDate.Year;
-
             CCar[] masCar;
+
             Console.WriteLine("масив ТЗ");
             PrintVehicleArr(arrVehicle);
 
-            Console.WriteLine("ТЗ які не старше 5 років");  
+            Console.WriteLine("ТЗ які не старше 5 років");
             FindVehicleBetweenYear(ref arrVehicle, year - 5, year);
             PrintVehicleArr(arrVehicle);
-            
+
             //з ТЗ візьмемо тільки автомобілі
             GetCarFromVehicle(arrVehicle, out masCar);
             Console.WriteLine("масив автомобілів");
             PrintVehicleArr(masCar);
+        }
+
+        /// <summary>
+        /// Из Масива Vehicle получить масив Ship не старше 5 лет, с отсортированой ценой по убыванию
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        public static void Method3(CVehicle[] arrVehicle)
+        {
+            Console.WriteLine("Из Масива Vehicle получить масив Ship не старше 5 лет, с отсортированой ценой по убыванию");
+
+            DateTime todaysDate = DateTime.Now.Date;
+            int year = todaysDate.Year;
+            CShip[] masShip;
+
+            Console.WriteLine("масив ТЗ");
+            PrintVehicleArr(arrVehicle);
+
+            Console.WriteLine("ТЗ які не старше 5 років");
+            FindVehicleBetweenYear(ref arrVehicle, year - 5, year);
+            PrintVehicleArr(arrVehicle);
+
+            //з ТЗ візьмемо тільки кораблі
+            GetShipFromVehicle(arrVehicle, out masShip);
+            Console.WriteLine("масив кораблів відсортований по ціні по зменшенню");
+            Array.Sort(masShip, new CompareByPrice());
+            //робимо ціну по зменшенню - бо по замовчуванню по збільшуванню
+            Array.Reverse(masShip);
+            PrintVehicleArr(masShip);
         }
     }
 }

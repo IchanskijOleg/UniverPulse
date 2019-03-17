@@ -20,10 +20,12 @@ namespace _001ConAppVehicle
             CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2001, 10000, 86);
 
             CVehicle ship1 = new CShip("Titanic", 5, 5, 300000, 60, SpeedMeasurement.m, 1912, "New York City", 2208);
-            CVehicle ship2 = new CShip("Aphrodite", 6, 6, 20000, 40, SpeedMeasurement.m, 2009, "Kiev", 200);
+            CVehicle ship2 = new CShip("Aphrodite", 6, 6, 10000, 40, SpeedMeasurement.m, 2015, "Kiev", 200);
+            CVehicle ship3 = new CShip("Lincoln", 6, 6, 5000, 40, SpeedMeasurement.m, 2019, "Kiev", 200);
+            CVehicle ship4 = new CShip("Aphrodit", 6, 6, 20000, 40, SpeedMeasurement.m, 2016, "Kiev", 200);
 
             //виведемо всі транспортні засоби на екран
-            CVehicle[] vehicle = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2 };
+            CVehicle[] vehicle = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
             CVehicleAnalysis.PrintVehicleArr(vehicle);
 
             //розділимо вивід на екран
@@ -50,6 +52,10 @@ namespace _001ConAppVehicle
             Console.WriteLine(new string('=', 50));
             //Из Масива Vehicle получить масив Car не старше 5 лет
             CVehicleAnalysis.Method2(vehicle);
+
+            Console.WriteLine(new string('=', 50));
+            //Из Масива Vehicle получить масив Ship не старше 5 лет, с отсортированой ценой по убыванию
+            CVehicleAnalysis.Method3(vehicle);
 
             Console.ReadKey();
         }
