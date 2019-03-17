@@ -62,6 +62,7 @@
     <Compile Include="CConvertor.cs" />
     <Compile Include="Coordinates.cs" />
     <Compile Include="CPlane.cs" />
+    <Compile Include="CProgramSettings.cs" />
     <Compile Include="CShip.cs" />
     <Compile Include="CVehicle.cs" />
     <Compile Include="CVehicleAnalysis.cs" />

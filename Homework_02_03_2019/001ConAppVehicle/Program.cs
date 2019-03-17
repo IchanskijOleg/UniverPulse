@@ -10,6 +10,8 @@ namespace _001ConAppVehicle
     {
         static void Main(string[] args)
         {
+            CProgramSettings.PrintVersionProg(); //Виведемо версію програми
+
             CVehicle car1 = new CCar("Ferrari 458", 1, 1, 100000, 100, SpeedMeasurement.km, 2009);
             CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 150, SpeedMeasurement.km, 1992);
 
