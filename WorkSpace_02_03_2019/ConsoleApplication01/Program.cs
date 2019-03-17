@@ -32,18 +32,27 @@ namespace Figures
             Console.WriteLine("Length AB=" + tr.GetLengthAB());
             Console.WriteLine("Length BC=" + tr.GetLengthBC());
 
-            Console.WriteLine();
+            Console.WriteLine(new string('-',40));
             AbstractFigure[] masFig = new AbstractFigure[4];
             masFig[0] = p1;
             masFig[1] = cp1;
             masFig[2] = l1;
             masFig[3] = tr;
             //masFig[4] = new AbstractFigure();
+
+            IColorAble[] masColor = new IColorAble[masFig.Length];
+            //int colorCount 
+
             foreach (var item in masFig)
             {
-                Console.WriteLine(item);
+                //Console.WriteLine(item);
+                if (item is Point)
+                {
+                    Console.WriteLine(((Point)item).X);
+                }
+                IColorAble colorAble = item as IColorAble;
             }
-
+            Console.WriteLine(new string('-', 40));
             //Line[] arrayLine = new Line[] { new Line(p1, p2), l1, l2 };
             Line[] arrayLine = new Line[] { tr.SideAB, tr.SideAC, tr.SideBC };
             Console.WriteLine(FigureControl.GetMaxLength(arrayLine));

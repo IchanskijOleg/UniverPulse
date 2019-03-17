@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    class ColorLine : Line
+    class ColorLine : Line, IColorAble
     {
         public ColorLine(Point start, Point end, string color) : base(start, end)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Figures
 {
-    class ColorPoint : Point
+    class ColorPoint : Point, IColorAble
     {
 
         public ColorPoint(int x, int y, string color) : base(x, y)
@@ -14,7 +14,7 @@ namespace Figures
             Color = color;
         }
 
-        private string Color { get; set; }
+        public string Color { get; set; }
 
         public override string ToString()
         {
