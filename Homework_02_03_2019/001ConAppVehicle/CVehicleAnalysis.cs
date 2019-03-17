@@ -107,5 +107,28 @@ namespace _001ConAppVehicle
                 Console.WriteLine(item.ToString());
             }
         }
+
+        /// <summary>
+        /// Транспортний засіб в яких рік випуску в межах
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="yearFrom">Рік з</param>
+        /// <param name="yearTill">Рік по</param>
+        public static void FindVehicleBetweenYear(ref CVehicle[] arrVehicle, int yearFrom, int yearTill)
+        {
+            CVehicle[] masVehicle = new CVehicle[arrVehicle.Length];
+            int count = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (yearFrom <= item.YearIssue && item.YearIssue <= yearTill)
+                {
+                    masVehicle[count] = item;
+                    count++;
+                }
+            }
+            CVehicle[] newVehicle = new CVehicle[count];
+            Array.Copy(masVehicle, newVehicle, count);
+            arrVehicle = newVehicle;
+        }
     }
 }

@@ -12,8 +12,9 @@ namespace _001ConAppVehicle
         {
             CProgramSettings.PrintVersionProg(); //Виведемо версію програми
 
-            CVehicle car1 = new CCar("Ferrari 458", 1, 1, 100000, 100, SpeedMeasurement.km, 2009);
+            CVehicle car1 = new CCar("Ferrari 458", 1, 1, 100000, 100, SpeedMeasurement.km, 2005);
             CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 150, SpeedMeasurement.km, 1992);
+            CVehicle car3 = new CCar("BMW M5", 2, 2, 45000, 230, SpeedMeasurement.km, 2018);
 
             CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 1989, 10000, 130);
             CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2010, 10000, 86);
@@ -22,7 +23,7 @@ namespace _001ConAppVehicle
             CVehicle ship2 = new CShip("Aphrodite", 6, 6, 20000, 40, SpeedMeasurement.m, 2009, "Kiev", 200);
 
             //виведемо всі транспортні засоби на екран
-            CVehicle[] vehicle = new CVehicle[6] { car1, car2, plane1, plane2, ship1, ship2 };
+            CVehicle[] vehicle = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2 };
             CVehicleAnalysis.PrintVehicleArr(vehicle);
 
             //розділимо вивід на екран
@@ -44,6 +45,12 @@ namespace _001ConAppVehicle
             CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
             CVehicleAnalysis.PrintVehicleArr(masCar);
 
+            Console.WriteLine(new string('=', 50));
+            //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
+            CVehicle[] vehicle1 = vehicle;
+            //CVehicleAnalysis.PrintVehicleArr(vehicle);
+            CVehicleAnalysis.FindVehicleBetweenYear(ref vehicle1, 2000, 2005);
+            CVehicleAnalysis.PrintVehicleArr(vehicle1);
             Console.ReadKey();
         }
     }
