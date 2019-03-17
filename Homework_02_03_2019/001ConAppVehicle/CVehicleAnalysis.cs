@@ -32,8 +32,15 @@ namespace _001ConAppVehicle
         /// <returns>ТЗ з мінімальною ціною</returns>
         public static CVehicle GetVehicleMinPrice(CVehicle[] arrVehicle)
         {
-            Array.Sort(arrVehicle, new CompareByPrice());
-            return arrVehicle[0];
+            if (arrVehicle.Length == 0)
+            {
+                return null;
+            }
+            else
+            {
+                Array.Sort(arrVehicle, new CompareByPrice());
+                return arrVehicle[0];
+            }
         }
 
         /// <summary>
@@ -43,8 +50,15 @@ namespace _001ConAppVehicle
         /// <returns>ТЗ з максимальною ціною</returns>
         public static CVehicle GetVehicleMaxPrice(CVehicle[] arrVehicle)
         {
-            Array.Sort(arrVehicle, new CompareByPrice());
-            return arrVehicle[arrVehicle.Length - 1];
+            if (arrVehicle.Length == 0)
+            {
+                return null;
+            }
+            else
+            {
+                Array.Sort(arrVehicle, new CompareByPrice());
+                return arrVehicle[arrVehicle.Length - 1];
+            }
         }
 
         /// <summary>
@@ -124,7 +138,10 @@ namespace _001ConAppVehicle
         /// <param name="vehicle"></param>
         public static void PrintVehicle(CVehicle vehicle)
         {
-            Console.WriteLine(vehicle.ToString());
+            if (vehicle != null)
+            {
+                Console.WriteLine(vehicle.ToString());
+            }
         }
 
         /// <summary>
@@ -162,6 +179,54 @@ namespace _001ConAppVehicle
             arrVehicle = newVehicle;
         }
 
+        /// <summary>
+        /// ТЗ з швидкістю більше ніж задана
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="speed">Швидкість</param>
+        public static void FindVehicleGivenSpeed(ref CVehicle[] arrVehicle, int speed)
+        {
+            CVehicle[] masVehicle = new CVehicle[arrVehicle.Length];
+            int count = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item.Speed > speed)
+                {
+                    masVehicle[count] = item;
+                    count++;
+                }
+            }
+            CVehicle[] newVehicle = new CVehicle[count];
+            Array.Copy(masVehicle, newVehicle, count);
+            arrVehicle = newVehicle;
+        }
 
+        /// <summary>
+        /// Механизм год выпуска 2000 - 2005 с скоростью выше 150 км.ч, и наименьшей ценой
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        public static void Method1(CVehicle[] arrVehicle)
+        {
+            Console.WriteLine("Механизм год выпуска 2000 - 2005 с скоростью выше 150 км.ч, и наименьшей ценой");
+
+            Console.WriteLine("масив ТЗ які лежать в межах років 2000 - 2005:");
+            FindVehicleBetweenYear(ref arrVehicle, 2000, 2005);
+            PrintVehicleArr(arrVehicle);
+
+            Console.WriteLine("масив ТЗ в яких швидкість більше 150:");
+            FindVehicleGivenSpeed(ref arrVehicle, 150);
+            PrintVehicleArr(arrVehicle);
+
+            Console.WriteLine("знаходимо ТЗ з мінімальною ціною:");
+            CVehicle v = GetVehicleMinPrice(arrVehicle);
+            if (v != null)
+            {
+                PrintVehicle(v);
+            }
+            else
+            {
+                Console.WriteLine("ТЗ з заданими умовами немає");
+            }
+        }
     }
 }

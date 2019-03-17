@@ -13,11 +13,11 @@ namespace _001ConAppVehicle
             CProgramSettings.PrintVersionProg(); //Виведемо версію програми
 
             CVehicle car1 = new CCar("Ferrari 458", 1, 1, 100000, 100, SpeedMeasurement.km, 2005);
-            CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 150, SpeedMeasurement.km, 2004);
+            CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 151, SpeedMeasurement.km, 2004);
             CVehicle car3 = new CCar("BMW M5", 2, 2, 45000, 230, SpeedMeasurement.km, 2018);
 
             CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 1989, 10000, 130);
-            CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2010, 10000, 86);
+            CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2001, 10000, 86);
 
             CVehicle ship1 = new CShip("Titanic", 5, 5, 300000, 60, SpeedMeasurement.m, 1912, "New York City", 2208);
             CVehicle ship2 = new CShip("Aphrodite", 6, 6, 20000, 40, SpeedMeasurement.m, 2009, "Kiev", 200);
@@ -45,17 +45,10 @@ namespace _001ConAppVehicle
             CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
             CVehicleAnalysis.PrintVehicleArr(masCar);
 
-            Console.WriteLine();
-            Console.WriteLine("Механизм год выпуска 2000 - 2005 с скоростью выше 150 км.ч, и наименьшей ценой");
-            //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
-            CVehicle[] vehicle1 = vehicle;
-            CVehicleAnalysis.FindVehicleBetweenYear(ref vehicle1, 2000, 2005);
-            CVehicleAnalysis.PrintVehicleArr(vehicle1);
-            CVehicle v = CVehicleAnalysis.GetVehicleMaxPrice(vehicle1);
-            CVehicleAnalysis.PrintVehicle(v);
-
             Console.WriteLine(new string('=', 50));
-            CVehicleAnalysis.PrintVehicleArr(vehicle);
+            //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
+            CVehicleAnalysis.Method1(vehicle);
+
             Console.ReadKey();
         }
     }

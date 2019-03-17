@@ -9,7 +9,7 @@ namespace _001ConAppVehicle
     class CPlane : CVehicle, IPassenger
     {
         public CPlane(string name, int x, int y, int price, int speed, SpeedMeasurement speedMeasure, int yearIssue, int height, int countPass)
-            : base(name, x, y, price, speed, speedMeasure, countPass)
+            : base(name, x, y, price, speed, speedMeasure, yearIssue)
         {
             Height = height;
             CountPasseger = countPass;
