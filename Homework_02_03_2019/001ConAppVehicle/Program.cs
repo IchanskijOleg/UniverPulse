@@ -23,10 +23,7 @@ namespace _001ConAppVehicle
 
             //виведемо всі транспортні засоби на екран
             CVehicle[] vehicle = new CVehicle[6] { car1, car2, plane1, plane2, ship1, ship2 };
-            foreach (CVehicle item in vehicle)
-            {
-                Console.WriteLine(item.ToString());
-            }
+            CVehicleAnalysis.PrintVehicleArr(vehicle);
 
             //розділимо вивід на екран
             Console.WriteLine();
@@ -45,10 +42,7 @@ namespace _001ConAppVehicle
             //Из Масива Vehicle получить масив Car не старше 5 лет
             CCar[] masCar;
             CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
-            foreach (CVehicle item in masCar)
-            {
-                Console.WriteLine(item.ToString());
-            }
+            CVehicleAnalysis.PrintVehicleArr(masCar);
 
             Console.ReadKey();
         }

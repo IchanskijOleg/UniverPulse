@@ -95,5 +95,17 @@ namespace _001ConAppVehicle
             Array.Copy(masVehicle, masCar, count);
             arrCar = masCar;
         }
+
+        /// <summary>
+        /// Виводимо на екран інформацію по транспортних засобах
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        public static void PrintVehicleArr(CVehicle[] arrVehicle)
+        {
+            foreach (var item in arrVehicle)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }
