@@ -16,7 +16,7 @@ namespace _001ConAppVehicle
             CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 151, SpeedMeasurement.km, 2004);
             CVehicle car3 = new CCar("BMW M5", 2, 2, 45000, 230, SpeedMeasurement.km, 2018);
 
-            CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 1989, 10000, 130);
+            CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 2015, 10000, 130);
             CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2001, 10000, 86);
 
             CVehicle ship1 = new CShip("Titanic", 5, 5, 300000, 60, SpeedMeasurement.m, 1912, "New York City", 2208);
@@ -40,18 +40,16 @@ namespace _001ConAppVehicle
             CVehicleAnalysis.PrintPassenger(vehicle);
 
             Console.WriteLine(new string('=', 50));
-            //Из Масива Vehicle получить масив Car не старше 5 лет
-            CCar[] masCar;
-            CVehicleAnalysis.GetCarFromVehicle(vehicle, out masCar);
-            CVehicleAnalysis.PrintVehicleArr(masCar);
-
-            Console.WriteLine(new string('=', 50));
             //Vehicle с наибольшей ценой
             CVehicleAnalysis.Method0(vehicle);
 
             Console.WriteLine(new string('=', 50));
             //Механизм год выпуска 2000 - 2005 с скоростью выше 150 км\ч, и наименьшей ценой
             CVehicleAnalysis.Method1(vehicle);
+
+            Console.WriteLine(new string('=', 50));
+            //Из Масива Vehicle получить масив Car не старше 5 лет
+            CVehicleAnalysis.Method2(vehicle);
 
             Console.ReadKey();
         }

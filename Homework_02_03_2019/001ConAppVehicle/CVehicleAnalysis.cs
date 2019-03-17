@@ -248,6 +248,25 @@ namespace _001ConAppVehicle
             }
         }
 
+        public static void Method2(CVehicle[] arrVehicle)
+        {
+            Console.WriteLine("Из Масива Vehicle получить масив Car не старше 5 лет");
 
+            DateTime todaysDate = DateTime.Now.Date;
+            int year = todaysDate.Year;
+
+            CCar[] masCar;
+            Console.WriteLine("масив ТЗ");
+            PrintVehicleArr(arrVehicle);
+
+            Console.WriteLine("ТЗ які не старше 5 років");  
+            FindVehicleBetweenYear(ref arrVehicle, year - 5, year);
+            PrintVehicleArr(arrVehicle);
+            
+            //з ТЗ візьмемо тільки автомобілі
+            GetCarFromVehicle(arrVehicle, out masCar);
+            Console.WriteLine("масив автомобілів");
+            PrintVehicleArr(masCar);
+        }
     }
 }
