@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CAmphibian.cs" />
+    <Compile Include="CBatmobile.cs" />
     <Compile Include="CCar.cs" />
     <Compile Include="CConvertor.cs" />
     <Compile Include="CompareByPrice.cs" />
