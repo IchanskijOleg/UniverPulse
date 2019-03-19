@@ -58,15 +58,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CAmphibian.cs" />
+    <Compile Include="CBatmobile.cs" />
     <Compile Include="CCar.cs" />
     <Compile Include="CConvertor.cs" />
+    <Compile Include="CompareByPrice.cs" />
     <Compile Include="Coordinates.cs" />
     <Compile Include="CPlane.cs" />
     <Compile Include="CProgramSettings.cs" />
     <Compile Include="CShip.cs" />
     <Compile Include="CVehicle.cs" />
     <Compile Include="CVehicleAnalysis.cs" />
+    <Compile Include="IFly.cs" />
+    <Compile Include="Imove.cs" />
     <Compile Include="IPassenger.cs" />
+    <Compile Include="ISwim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpeedMeasurement.cs" />

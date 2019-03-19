@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class CPlane : CVehicle, IPassenger
+    class CPlane : CVehicle, IPassenger, IFly
     {
         public CPlane(string name, int x, int y, int price, int speed, SpeedMeasurement speedMeasure, int yearIssue, int height, int countPass)
-            : base(name, x, y, price, speed, speedMeasure, countPass)
+            : base(name, x, y, price, speed, speedMeasure, yearIssue)
         {
             Height = height;
             CountPasseger = countPass;
@@ -17,5 +17,10 @@ namespace _001ConAppVehicle
 
         public int CountPasseger { get; set; }
         public int Height { get; set; }
+
+        public void Fly()
+        {
+            Console.WriteLine("Літати");
+        }
     }
 }
