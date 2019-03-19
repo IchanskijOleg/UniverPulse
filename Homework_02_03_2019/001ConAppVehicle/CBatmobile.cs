@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class CBatmobile : Imove, IFly, ISwim
+    class CBatmobile : IMove, IFly, ISwim
     {
+        public CBatmobile(CCar car)
+        {
+            this.car = car;
+        }
+
+        protected CCar car;
+
         public void Fly()
         {
             throw new NotImplementedException();

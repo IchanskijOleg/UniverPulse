@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class CAmphibian : Imove, ISwim
+    class CAmphibian : IMove, ISwim
     {
+        public CAmphibian(CVehicle vehicle)
+        {
+            this.vehicle = vehicle;
+        }
+
+        CVehicle vehicle;
+
         public void Move()
         {
             throw new NotImplementedException();

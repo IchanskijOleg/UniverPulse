@@ -57,6 +57,12 @@ namespace _001ConAppVehicle
             //Из Масива Vehicle получить масив Ship не старше 5 лет, с отсортированой ценой по убыванию
             CVehicleAnalysis.Method3(vehicle);
 
+            Console.WriteLine(new string('=', 50));
+            //Создать 3 последовательности IFly, ISwim, IMove
+            //IFly[] masFly = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
+            //ISwim[] masSwim = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
+            //Imove[] masMove = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
+
             Console.ReadKey();
         }
     }
