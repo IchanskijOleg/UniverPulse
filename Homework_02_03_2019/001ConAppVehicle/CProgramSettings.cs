@@ -14,7 +14,7 @@ namespace _001ConAppVehicle
         public static void PrintVersionProg()
         {
             Console.WriteLine(new string('+', 22));
-            Console.WriteLine(new string('+', 5) + "RELEASE 1.00" + new string('+', 5));
+            Console.WriteLine(new string('+', 5) + "RELEASE 1.10" + new string('+', 5));
             Console.WriteLine(new string('+', 22));
             Console.WriteLine();
         }
