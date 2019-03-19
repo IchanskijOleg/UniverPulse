@@ -59,9 +59,34 @@ namespace _001ConAppVehicle
 
             Console.WriteLine(new string('=', 50));
             //Создать 3 последовательности IFly, ISwim, IMove
-            //IFly[] masFly = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
-            //ISwim[] masSwim = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
-            //Imove[] masMove = new CVehicle[] { car1, car2, car3, plane1, plane2, ship1, ship2, ship3, ship4 };
+            IFly[] masFly = { car1 as IFly, plane1 as IFly, ship1 as IFly, new CBatmobile((CCar)car1) as IFly };
+            ISwim[] masSwim = { car1 as ISwim, plane1 as ISwim, ship1 as ISwim, new CBatmobile((CCar)car1) as ISwim, new CAmphibian((CCar)car1) as ISwim };
+            IMove[] masMove = { car1 as IMove, plane1 as IMove, ship1 as IMove, new CBatmobile((CCar)car1) as IMove, new CAmphibian((CShip)ship1) as IMove };
+
+            Console.WriteLine("\n masFly:");
+            foreach (var item in masFly)
+            {
+                if ((object)item != null)
+                {
+                    item.Fly();
+                }
+            }
+            Console.WriteLine("\n masSwim:");
+            foreach (var item in masSwim)
+            {
+                if ((object)item != null)
+                {
+                    item.Swim();
+                }
+            }
+            Console.WriteLine("\n masMove:");
+            foreach (var item in masMove)
+            {
+                if ((object)item != null)
+                {
+                    item.Move();
+                }
+            }
 
             Console.ReadKey();
         }

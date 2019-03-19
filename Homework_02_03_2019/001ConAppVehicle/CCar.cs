@@ -15,7 +15,7 @@ namespace _001ConAppVehicle
 
         public void Move()
         {
-            Console.WriteLine("Їхати");  
+            Console.WriteLine("CCar Їхати");  
         }
     }
 }

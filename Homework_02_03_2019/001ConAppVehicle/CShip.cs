@@ -22,7 +22,7 @@ namespace _001ConAppVehicle
 
         public void Swim()
         {
-            Console.WriteLine("Плавати");
+            Console.WriteLine("CShip Плавати");
         }
     }
 }

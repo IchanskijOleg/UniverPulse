@@ -20,7 +20,7 @@ namespace _001ConAppVehicle
 
         public void Fly()
         {
-            Console.WriteLine("Літати");
+            Console.WriteLine("CPlane Літати");
         }
     }
 }

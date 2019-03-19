@@ -17,12 +17,12 @@ namespace _001ConAppVehicle
 
         public void Move()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("CAmphibian Їхати");
         }
 
         public void Swim()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("CAmphibian Плавати");
         }
     }
 }
