@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class CCar : CVehicle, Imove
+    class CCar : CVehicle, IMove
     {
         public CCar(string name, int x, int y, int price, double speed, SpeedMeasurement speedMeasure, int yearIssue) 
             : base(name, x, y, price, speed, speedMeasure, yearIssue)
@@ -15,7 +15,7 @@ namespace _001ConAppVehicle
 
         public void Move()
         {
-            Console.WriteLine("Їхати");  
+            Console.WriteLine("CCar Їхати");  
         }
     }
 }

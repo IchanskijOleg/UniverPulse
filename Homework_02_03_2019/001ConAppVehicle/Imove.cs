@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    interface Imove
+    interface IMove
     {
         void Move();
     }

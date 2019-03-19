@@ -70,7 +70,7 @@
     <Compile Include="CVehicle.cs" />
     <Compile Include="CVehicleAnalysis.cs" />
     <Compile Include="IFly.cs" />
-    <Compile Include="Imove.cs" />
+    <Compile Include="IMove.cs" />
     <Compile Include="IPassenger.cs" />
     <Compile Include="ISwim.cs" />
     <Compile Include="Program.cs" />
