@@ -322,5 +322,20 @@ namespace _001ConAppVehicle
             Array.Reverse(masShip);
             PrintVehicleArr(masShip);
         }
+
+        public static void GetIProcessFromArrVeh(CVehicle[] arrVehicle, out /*IProcess*/IFly[] arrProcess)
+        {
+            IFly[] masFly = new IFly[arrVehicle.Length];
+            int i = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is IFly)
+                {
+                    masFly[i++] = item as IFly;
+                }
+            }
+            Array.Resize(ref masFly, i);
+            arrProcess = masFly;
+        }
     }
 }
