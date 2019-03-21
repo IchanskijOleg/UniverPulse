@@ -87,6 +87,8 @@ namespace _001ConAppVehicle
                     item.Move();
                 }
             }
+            IFly[] masFly1;
+            CVehicleAnalysis.GetIFlyFromArrVeh(vehicle, out masFly1);
 
             Console.ReadKey();
         }
