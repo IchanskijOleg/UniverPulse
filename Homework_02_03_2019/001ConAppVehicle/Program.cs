@@ -16,6 +16,16 @@ namespace _001ConAppVehicle
             CVehicle car2 = new CCar("Ferrari f40", 2, 2, 50000, 151, SpeedMeasurement.km, 2004);
             CVehicle car3 = new CCar("BMW M5", 2, 2, 45000, 230, SpeedMeasurement.km, 2018);
 
+            var bm1 = new CBatmobile(car1);
+            bm1.Move();
+            Console.WriteLine($"После модернизации {bm1.Name} в бэтмобиль, мы назвали его BatRarri 458X!");
+            bm1.Name = "BatRarri 458X";
+            
+            bm1.Move();
+
+
+
+
             CVehicle plane1 = new CPlane("Boing 737", 3, 3, 100000, 900, SpeedMeasurement.km, 2015, 10000, 130);
             CVehicle plane2 = new CPlane("AN-158", 4, 4, 100000, 800, SpeedMeasurement.km, 2001, 10000, 86);
 
@@ -63,6 +73,9 @@ namespace _001ConAppVehicle
             ISwim[] masSwim = { car1 as ISwim, plane1 as ISwim, ship1 as ISwim, new CBatmobile((CCar)car1) as ISwim, new CAmphibian((CCar)car1) as ISwim };
             IMove[] masMove = { car1 as IMove, plane1 as IMove, ship1 as IMove, new CBatmobile((CCar)car1) as IMove, new CAmphibian((CShip)ship1) as IMove };
 
+            masMove[3].Move();
+
+
             Console.WriteLine("\n masFly:");
             foreach (var item in masFly)
             {
@@ -88,12 +101,13 @@ namespace _001ConAppVehicle
                     item.Move();
                 }
             }
-<<<<<<< HEAD
-            
-=======
+
             IFly[] masFly1;
             CVehicleAnalysis.GetIFlyFromArrVeh(vehicle, out masFly1);
->>>>>>> origin/master
+
+            var flyObjects = CVehicleAnalysis.getSpecialVehicle<IFly>(vehicle).Select(x => x as IFly).ToArray();
+            var swimObjects = CVehicleAnalysis.getSpecialVehicle<ISwim>(vehicle).Select(x => x as ISwim).ToArray();
+            var moveObjects = CVehicleAnalysis.getSpecialVehicle<IMove>(vehicle).Select(x => x as IMove).ToArray();
 
             Console.ReadKey();
         }

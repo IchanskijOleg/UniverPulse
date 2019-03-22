@@ -338,8 +338,25 @@ namespace _001ConAppVehicle
             arrProcess = masMove;
         }
 
-        public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out /*IProcess*/IFly[] arrProcess)
+        //public static T getSpecialVehicle<T>(CVehicle[] arrayForSort)
+        //{
+        //    return arrayForSort.Where(x => x is T).ToArray();
+        //}
+
+        public static object[] getSpecialVehicle<T>(CVehicle[] arrayForSort)
         {
+            return arrayForSort.Where(x => x is T).ToArray();
+        }
+
+        //public static T tryLoad<T>(this T type, CVehicle[] t)
+        //{
+        //    return t.Where(x => x is type).ToArray();
+        //}
+
+        public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out IFly[] arrProcess)
+        {
+            var neededObjects = arrVehicle.Where(x => x is IFly).ToArray();
+
             IFly[] masFly = new IFly[arrVehicle.Length];
             int i = 0;
             foreach (var item in arrVehicle)
@@ -352,6 +369,7 @@ namespace _001ConAppVehicle
             Array.Resize(ref masFly, i);
             arrProcess = masFly;
         }
+
         public delegate TResult Func<in T, out TResult>(T arg);
         public static void GetISwimFromArrVeh(CVehicle[] arrVehicle, out ISwim[] arrProcess)
         {

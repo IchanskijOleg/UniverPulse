@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class Coordinates
+    public class Coordinates
     {
         public Coordinates(int x, int y)
         {

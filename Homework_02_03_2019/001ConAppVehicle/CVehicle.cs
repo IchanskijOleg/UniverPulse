@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    abstract class CVehicle
+    public abstract class CVehicle
     {
         public CVehicle(string name, int x, int y, int price, double speed, SpeedMeasurement speedMeasure, int yearIssue)
         {
@@ -17,7 +17,7 @@ namespace _001ConAppVehicle
             YearIssue = yearIssue;
             SpeedMeasure = speedMeasure;
         }
-        public string Name { get; private set; }
+        public string Name { get; set; }
         public int Price { get; set; }
         public double Speed { get; set; }
         public int YearIssue { get; private set; }

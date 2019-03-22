@@ -6,28 +6,27 @@ using System.Threading.Tasks;
 
 namespace _001ConAppVehicle
 {
-    class CBatmobile : IMove, IFly, ISwim
+    class CBatmobile : CVehicle, IMove, IFly, ISwim
     {
-        public CBatmobile(CCar car)
+        public CBatmobile(CVehicle vehicle)
+            : base(vehicle.Name, vehicle.Point.X, vehicle.Point.Y, vehicle.Price, vehicle.Speed, vehicle.SpeedMeasure, vehicle.YearIssue)
         {
-            this.car = car;
-        }
 
-        protected CCar car;
+        }
 
         public void Fly()
         {
-            Console.WriteLine("CBatmobile Літати");
+            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може літати до швидкості {Speed}{SpeedMeasure}");
         }
 
         public void Move()
         {
-            Console.WriteLine("CBatmobile Їхати");
+            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може їхати до швидкості {Speed}{SpeedMeasure}");
         }
 
         public void Swim()
         {
-            Console.WriteLine("CBatmobile Плавати");
+            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може плавати до швидкості {Speed}{SpeedMeasure}");
         }
     }
 }

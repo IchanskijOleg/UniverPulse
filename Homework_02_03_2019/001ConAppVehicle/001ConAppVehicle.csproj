@@ -72,7 +72,6 @@
     <Compile Include="IFly.cs" />
     <Compile Include="IMove.cs" />
     <Compile Include="IPassenger.cs" />
-    <Compile Include="IProcess.cs" />
     <Compile Include="ISwim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
