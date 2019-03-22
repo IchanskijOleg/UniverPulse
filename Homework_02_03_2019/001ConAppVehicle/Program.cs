@@ -78,7 +78,6 @@ namespace _001ConAppVehicle
                 if ((object)item != null)
                 {
                     item.Swim();
-                    //CVehicleAnalysis.PrintVehicle(item as CVehicle);
                 }
             }
             Console.WriteLine("\n masMove:");
@@ -89,7 +88,12 @@ namespace _001ConAppVehicle
                     item.Move();
                 }
             }
+<<<<<<< HEAD
             
+=======
+            IFly[] masFly1;
+            CVehicleAnalysis.GetIFlyFromArrVeh(vehicle, out masFly1);
+>>>>>>> origin/master
 
             Console.ReadKey();
         }

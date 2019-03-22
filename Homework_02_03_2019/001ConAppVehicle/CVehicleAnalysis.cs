@@ -322,5 +322,51 @@ namespace _001ConAppVehicle
             Array.Reverse(masShip);
             PrintVehicleArr(masShip);
         }
-    }
+
+        public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out IMove[] arrProcess)
+        {
+            IMove[] masMove = new IMove[arrVehicle.Length];
+            int i = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is IMove)
+                {
+                    masMove[i++] = item as IMove;
+                }
+            }
+            Array.Resize(ref masMove, i);
+            arrProcess = masMove;
+        }
+
+        public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out /*IProcess*/IFly[] arrProcess)
+        {
+            IFly[] masFly = new IFly[arrVehicle.Length];
+            int i = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is IFly)
+                {
+                    masFly[i++] = item as IFly;
+                }
+            }
+            Array.Resize(ref masFly, i);
+            arrProcess = masFly;
+        }
+        public delegate TResult Func<in T, out TResult>(T arg);
+        public static void GetISwimFromArrVeh(CVehicle[] arrVehicle, out ISwim[] arrProcess)
+        {
+            ISwim[] masSwim = new ISwim[arrVehicle.Length];
+            int i = 0;
+            foreach (var item in arrVehicle)
+            {
+                if (item is ISwim)
+                {
+                    masSwim[i++] = item as ISwim;
+                }
+            }
+            Array.Resize(ref masSwim, i);
+            arrProcess = masSwim;
+        }
+
+}
 }
