@@ -72,11 +72,13 @@ namespace _001ConAppVehicle
                 }
             }
             Console.WriteLine("\n masSwim:");
+            Array.Sort(vehicle, new CompareByPrice());
             foreach (var item in masSwim)
             {
                 if ((object)item != null)
                 {
                     item.Swim();
+                    //CVehicleAnalysis.PrintVehicle(item as CVehicle);
                 }
             }
             Console.WriteLine("\n masMove:");
@@ -87,6 +89,7 @@ namespace _001ConAppVehicle
                     item.Move();
                 }
             }
+            
 
             Console.ReadKey();
         }
