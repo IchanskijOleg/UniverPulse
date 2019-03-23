@@ -20,7 +20,7 @@ namespace _001ConAppVehicle
             bm1.Move();
             Console.WriteLine($"После модернизации {bm1.Name} в бэтмобиль, мы назвали его BatRarri 458X!");
             bm1.Name = "BatRarri 458X";
-            
+
             bm1.Move();
 
 
