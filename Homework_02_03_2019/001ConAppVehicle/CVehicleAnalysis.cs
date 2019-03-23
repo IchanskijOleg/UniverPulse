@@ -323,7 +323,12 @@ namespace _001ConAppVehicle
             PrintVehicleArr(masShip);
         }
 
-        public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out IMove[] arrProcess)
+        /// <summary>
+        /// Отримати всі ТЗ які вміють їздити
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="arrProcess">Масив ТЗ які їздять</param>
+        public static void GetIMoveFromArrVeh(CVehicle[] arrVehicle, out IMove[] arrProcess)
         {
             IMove[] masMove = new IMove[arrVehicle.Length];
             int i = 0;
@@ -337,25 +342,15 @@ namespace _001ConAppVehicle
             Array.Resize(ref masMove, i);
             arrProcess = masMove;
         }
-
-        //public static T getSpecialVehicle<T>(CVehicle[] arrayForSort)
-        //{
-        //    return arrayForSort.Where(x => x is T).ToArray();
-        //}
-
-        public static object[] getSpecialVehicle<T>(CVehicle[] arrayForSort)
-        {
-            return arrayForSort.Where(x => x is T).ToArray();
-        }
-
-        //public static T tryLoad<T>(this T type, CVehicle[] t)
-        //{
-        //    return t.Where(x => x is type).ToArray();
-        //}
-
+        
+        /// <summary>
+        /// Отримати всі ТЗ які вміють літати
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="arrProcess">Масив ТЗ які літають</param>
         public static void GetIFlyFromArrVeh(CVehicle[] arrVehicle, out IFly[] arrProcess)
         {
-            var neededObjects = arrVehicle.Where(x => x is IFly).ToArray();
+            //var neededObjects = arrVehicle.Where(x => x is IFly).ToArray();
 
             IFly[] masFly = new IFly[arrVehicle.Length];
             int i = 0;
@@ -370,9 +365,16 @@ namespace _001ConAppVehicle
             arrProcess = masFly;
         }
 
-        public delegate TResult Func<in T, out TResult>(T arg);
+        //public delegate TResult Func<in T, out TResult>(T arg);
+
+        /// <summary>
+        /// Отримати всі ТЗ які вміють плавати
+        /// </summary>
+        /// <param name="arrVehicle">Масив транспортних засібів</param>
+        /// <param name="arrProcess">Масив ТЗ які плавають</param>
         public static void GetISwimFromArrVeh(CVehicle[] arrVehicle, out ISwim[] arrProcess)
         {
+            //List<ISwim> newList = new List<ISwim>().Add(arrVehicle.Where(x => x is IFly));
             ISwim[] masSwim = new ISwim[arrVehicle.Length];
             int i = 0;
             foreach (var item in arrVehicle)
@@ -386,5 +388,17 @@ namespace _001ConAppVehicle
             arrProcess = masSwim;
         }
 
-}
+        //public static T getSpecialVehicle<T>(CVehicle[] arrayForSort)
+        //{
+        //    return arrayForSort.Where(x => x is T).ToArray();
+        //}
+        //public static T tryLoad<T>(this T type, CVehicle[] t)
+        //{
+        //    return t.Where(x => x is type).ToArray();
+        //}
+        public static object[] getSpecialVehicle<T>(CVehicle[] arrayForSort)
+        {
+            return arrayForSort.Where(x => x is T).ToArray();
+        }
+    }
 }

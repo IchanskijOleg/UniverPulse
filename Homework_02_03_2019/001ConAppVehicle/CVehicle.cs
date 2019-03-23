@@ -20,7 +20,7 @@ namespace _001ConAppVehicle
         public string Name { get; set; }
         public int Price { get; set; }
         public double Speed { get; set; }
-        public int YearIssue { get; private set; }
+        public int YearIssue { get; set; }
 
         public SpeedMeasurement SpeedMeasure { get; set; }
 

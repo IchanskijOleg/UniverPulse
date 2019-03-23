@@ -15,12 +15,12 @@ namespace _001ConAppVehicle
 
         public void Move()
         {
-            Console.WriteLine($"Амфібія зроблена з {Name}, може їздити до швидкості {Speed}{SpeedMeasure}");
+            Console.WriteLine($"Амфібія зроблена з {Name}, може їздити з швидкістю {Speed}{SpeedMeasure}");
         }
 
         public void Swim()
         {
-            Console.WriteLine($"Амфібія зроблена з {Name}, може плавати до швидкості {Speed}{SpeedMeasure}");
+            Console.WriteLine($"Амфібія зроблена з {Name}, може плавати з швидкістю {Speed}{SpeedMeasure}");
         }
     }
 }

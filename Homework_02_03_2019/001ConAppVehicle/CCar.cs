@@ -15,7 +15,7 @@ namespace _001ConAppVehicle
 
         public void Move()
         {
-            Console.WriteLine("CCar Їхати ТЕСТ");  
+            Console.WriteLine($"Автомобіль {Name}, може їздити з швидкістю {Speed}{SpeedMeasure}");
         }
     }
 }

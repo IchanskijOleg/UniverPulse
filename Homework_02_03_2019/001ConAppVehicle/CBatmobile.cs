@@ -16,17 +16,17 @@ namespace _001ConAppVehicle
 
         public void Fly()
         {
-            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може літати до швидкості {Speed}{SpeedMeasure}");
+            Console.WriteLine($"Бетмобіль зроблений з {Name}, може літати з швидкістю {Speed}{SpeedMeasure}");
         }
 
         public void Move()
         {
-            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може їхати до швидкості {Speed}{SpeedMeasure}");
+            Console.WriteLine($"Бетмобіль зроблений з {Name}, може їздити з швидкістю {Speed}{SpeedMeasure}");
         }
 
         public void Swim()
         {
-            Console.WriteLine($"Бетмобіль зроблений з машини {Name}, може плавати до швидкості {Speed}{SpeedMeasure}");
+            Console.WriteLine($"Бетмобіль зроблений з {Name}, може плавати з швидкістю {Speed}{SpeedMeasure}");
         }
     }
 }

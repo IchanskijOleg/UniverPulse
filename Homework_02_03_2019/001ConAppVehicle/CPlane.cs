@@ -20,7 +20,7 @@ namespace _001ConAppVehicle
 
         public void Fly()
         {
-            Console.WriteLine("CPlane Літати");
+            Console.WriteLine($"Літак {Name}, може літати з швидкістю {Speed}{SpeedMeasure}");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace _001ConAppVehicle
 
         public void Swim()
         {
-            Console.WriteLine("CShip Плавати");
+            Console.WriteLine($"Корабель {Name}, може плавати з швидкістю {Speed}{SpeedMeasure}");
         }
     }
 }
